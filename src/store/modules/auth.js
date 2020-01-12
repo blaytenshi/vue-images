@@ -1,3 +1,5 @@
+import api from '../../api/imgur';
+
 const state = {
     token: null
 };
@@ -14,6 +16,9 @@ const actions = {
     logout: ({ commit }) => {
         // do not directly call mutations.setToken()!! use commit() instead
         commit('setToken', null); // first argument is the mutation function we wish to call, second is the value we want to put in
+    },
+    login: () => {
+        api.login(); // this navigates user away and takes them to log in
     }
 };
 
@@ -23,3 +28,10 @@ const mutations = {
         state.token = token;
     }
 };
+
+export default {
+    state,
+    getters, 
+    actions, 
+    mutations
+}
