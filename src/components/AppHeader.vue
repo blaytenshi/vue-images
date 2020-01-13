@@ -5,9 +5,9 @@
         </a>
         <div class="right menu">
             <div class="horizontal" v-if="isLoggedIn">
-                <a class="item">Galleries Button</a>
-                <a class="item">Upload Button</a>
-                <a class="item">Logout Button</a>
+                <a class="item">Galleries</a>
+                <a class="item">Upload</a>
+                <a class="item" @click="logout">Logout</a>
             </div>
             <a v-else href="#" class="ui item" @click="login">Login</a>
         </div>
@@ -21,7 +21,7 @@ export default {
     name: 'AppHeader',
     // methods accept arguments, used to respond to events from the DOM
     methods: { // alternatively you can also just do methods: mapActions(['login'])
-        ...mapActions(['login']), // this is a list of function names you wanna map into the methods property
+        ...mapActions(['login', 'logout']), // this is a list of function names you wanna map into the methods property
         // i prefer this syntax because it allows you to add other methods on should you need it.
     },
     // computed does NOT accept arguments, used to recompute values as needed from other sources (eg data)
