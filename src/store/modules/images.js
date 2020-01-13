@@ -18,7 +18,7 @@ const actions = {
         const response = await api.fetchImages(token);
         // console.log(response);
 
-        // commit has to call a mutation to change data
+        // commit has to call a mutation function to change data
         commit('setImages', response.data.data);
     }
 };
