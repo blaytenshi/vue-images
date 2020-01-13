@@ -7,6 +7,7 @@ import AuthHandler from './components/AuthHandler';
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+  mode: 'history', // tells VueRouter to use BrowserRouter instead of HashRouter
   routes: [
     { path: '/oauth2/callback', component: AuthHandler }
   ]
