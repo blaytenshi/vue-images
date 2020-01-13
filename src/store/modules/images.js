@@ -21,8 +21,15 @@ const actions = {
         // commit has to call a mutation function to change data
         commit('setImages', response.data.data);
     },
-    uploadImages: async ({ commit }, images) => {
-        console.log(images);
+    uploadImages: async ({ rootState }, images) => {
+        // console.log(images);
+        // get access token
+        const { token } = rootState.auth;
+
+        // call api to do upload
+        await api.upload(images, token);
+
+        // redirect user to ImageList component
     }
 };
 
