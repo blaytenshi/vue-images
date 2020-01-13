@@ -2,7 +2,7 @@ import api from '../../api/imgur';
 import qs from 'qs';
 
 const state = {
-    token: null
+    token: window.localStorage.getItem('imgur_token')
 };
 
 const getters = {
@@ -26,6 +26,7 @@ const actions = {
         // #/access_token=31595b94eb3a9feae5fea7ba2e5011e8df2b2424&expires_in=315360000&token_type=bearer&refresh_token=645f41723ed5655e9dba0022c0bdffee0bcd9905&account_username=afutureme&account_id=1885813
         const query = qs.parse(hash.replace("#", ""));
         commit('setToken', query.access_token); // pulling off the access_token from it
+        window.localStorage.setItem('imgur_token', query.access_token);
     },
 };
 
