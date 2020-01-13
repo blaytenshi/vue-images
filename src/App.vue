@@ -2,7 +2,9 @@
   <div>
     <AppHeader/>
     <!-- This is where VueRouter is gonna render the components -->
-    <router-view/>
+    <div class="ui container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
