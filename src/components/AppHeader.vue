@@ -4,10 +4,10 @@
             Image Storage
         </a>
         <div class="right menu">
-            <div v-if="isLoggedIn">
-                Galleries Button
-                Upload Button
-                Logout Button
+            <div class="horizontal" v-if="isLoggedIn">
+                <a class="item">Galleries Button</a>
+                <a class="item">Upload Button</a>
+                <a class="item">Logout Button</a>
             </div>
             <a v-else href="#" class="ui item" @click="login">Login</a>
         </div>
@@ -34,5 +34,8 @@ export default {
 </script>
 
 <style scoped>
-
+    .horizontal {
+        display: flex;
+        flex-direction: row;
+    }
 </style>
