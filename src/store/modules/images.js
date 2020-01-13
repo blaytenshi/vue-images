@@ -20,6 +20,9 @@ const actions = {
 
         // commit has to call a mutation function to change data
         commit('setImages', response.data.data);
+    },
+    uploadImages: async ({ commit }, images) => {
+        console.log(images);
     }
 };
 
