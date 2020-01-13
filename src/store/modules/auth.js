@@ -17,6 +17,7 @@ const actions = {
     logout: ({ commit }) => {
         // do not directly call mutations.setToken()!! use commit() instead
         commit('setToken', null); // first argument is the mutation function we wish to call, second is the value we want to put in
+        window.localStorage.removeItem('imgur_token');
     },
     login: () => {
         api.login(); // this navigates user away and takes them to log in
