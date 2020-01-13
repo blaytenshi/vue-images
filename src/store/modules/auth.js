@@ -1,5 +1,6 @@
 import api from '../../api/imgur';
 import qs from 'qs';
+import { router } from '../../main';
 
 const state = {
     token: window.localStorage.getItem('imgur_token')
@@ -28,6 +29,9 @@ const actions = {
         const query = qs.parse(hash.replace("#", ""));
         commit('setToken', query.access_token); // pulling off the access_token from it
         window.localStorage.setItem('imgur_token', query.access_token);
+
+        // nav user to the landing page
+        router.push('/');
     },
 };
 
