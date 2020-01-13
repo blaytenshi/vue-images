@@ -7,6 +7,9 @@
 
 <script>
 export default {
-    
+    name: 'AuthHandler',
+    created() { // lifecycle method! just like react! WOO
+
+    }
 }
 </script>
